@@ -117,6 +117,27 @@ def create_tables(spark: SparkSession) -> None:
                 ) USING PARQUET
                 """)
         logger.info("Table created successfully.")
+        
+        
+        
+        logger.info("Creating Fact Table.")
+        spark.sql("""
+                CREATE TABLE sale_ecommerce_dwh.FactSalesTable
+                    (
+                    price DECIMAL (10,2),
+                    qty_ordered INT,
+                    grand_total DECIMAL (10,2),
+                    discount_amount DECIMAL (10,2),
+                    mv DECIMAL (10,2),
+                    DimProductKey INT,
+                    DimDateKey INT,
+                    DimStatusKey INT,
+                    DimMethodKey INT,
+                    DimBiStatusKey INT,
+                    DimCustomerKey INT 
+                    ) USING PARQUET 
+                    """)
+        logger.info("Table created successfully.")
     
     
     
