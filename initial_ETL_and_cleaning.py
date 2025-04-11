@@ -174,7 +174,7 @@ if __name__ == "__main__":
     try:
         logger.info('Starting Initial ETL Pipeline...')
         # Run the initial extract and cleaning function
-        initial_extract_and_cleaning(path = 'path to the data', file_format = 'file_format')
+        initial_extract_and_cleaning(path = 'path to the data', file_format = 'file format')
         logger.info('Initial ETL Pipeline Completed Successfully')
     
     except Exception as err:
